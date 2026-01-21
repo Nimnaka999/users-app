@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import './App.css';
 import UserList from './components/UserList';
 import UserForm from './components/UserForm';
+import Chatbot from './components/Chatbot';
 import { fetchUsers, createUser, updateUser, deleteUser } from './services/userService';
+
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -142,6 +144,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Chatbot users={users} loading={loading} />
     </div>
   );
 }
